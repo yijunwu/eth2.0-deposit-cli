@@ -5,9 +5,9 @@ THIS IS A STUB FOR RUNNING THE APP
 """
 
 setup(
-    name="eth2deposit",
+    name="staking-deposit-cli",
     version='1.2.0',
-    py_modules=["eth2deposit"],
+    py_modules=["staking-deposit-cli"],
     packages=find_packages(exclude=('tests', 'docs')),
     python_requires=">=3.7,<4",
 )
