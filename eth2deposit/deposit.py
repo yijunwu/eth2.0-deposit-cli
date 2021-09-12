@@ -3,7 +3,12 @@ import click
 
 from eth2deposit.cli.existing_mnemonic import existing_mnemonic
 from eth2deposit.cli.new_mnemonic import new_mnemonic
-
+from eth2deposit.cli.existing_mnemonic_partial import (
+    find_valid_mnemonics,
+    existing_mnemonic_partial)
+from eth2deposit.utils.constants import (
+    WORD_LISTS_PATH,
+)
 
 def check_python_version() -> None:
     '''
@@ -21,8 +26,11 @@ def cli() -> None:
 
 cli.add_command(existing_mnemonic)
 cli.add_command(new_mnemonic)
+cli.add_command(existing_mnemonic_partial)
 
 
 if __name__ == '__main__':
     check_python_version()
+    mnemonic = 'humor square core remember flower cradle morning travel search shield olive sphere winner syrup average argue swim mus march toddler trial trap blood enforc'
+    print(find_valid_mnemonics(mnemonic, 'english', WORD_LISTS_PATH))
     cli()
